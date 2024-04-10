@@ -1,3 +1,4 @@
+# version: 1.0.1
 #
 # Microsoft SQL.ps1 - IDM System PowerShell Script for Microsoft SQL Server.
 #
@@ -67,6 +68,20 @@ function Idm-SystemInfo {
                 description = 'User account password to access Microsoft SQL server'
                 value = ''
                 hidden = 'use_svc_account_creds'
+            }
+            @{
+                name = 'timeout'
+                type = 'textbox'
+                label = 'Query Timeout'
+                description = 'Timeout in secounds, 0 = no timeout'
+                value = '0'
+            }
+            @{
+                name = 'connection_timeout'
+                type = 'textbox'
+                label = 'Query Timeout'
+                description = 'Time in seconds'
+                value = '3600'
             }
             @{
                 name = 'nr_of_sessions'
@@ -354,12 +369,13 @@ function Fill-SqlInfoCache {
     param (
         [switch] $Force,
         [string] $Query,
-        [string] $Class
+        [string] $Class,
+        [string] $Timeout = 3600
     )
 
     # Refresh cache
     $sql_command = New-MsSqlCommand $Query
-
+    $sql_command.CommandTimeout = $Timeout
     $result = (Invoke-MsSqlCommand $sql_command) | Get-Member -MemberType Properties | Select-Object Name
 
     Dispose-MsSqlCommand $sql_command
@@ -772,7 +788,8 @@ function Open-MsSqlConnection {
     # Use connection related parameters only
     $cs_builder['Data Source']     = $connection_params.server
     $cs_builder['Initial Catalog'] = $connection_params.database
-
+    $cs_builder["Connect Timeout"] = $connection_params.connection_timeout
+    
     if ($connection_params.use_svc_account_creds) {
         $cs_builder['Integrated Security'] = 'SSPI'
     }
@@ -780,7 +797,7 @@ function Open-MsSqlConnection {
         $cs_builder['User ID']  = $connection_params.username
         $cs_builder['Password'] = $connection_params.password
     }
-
+    
     $connection_string = $cs_builder.ConnectionString
 
     if ($Global:MsSqlConnection -and $connection_string -ne $Global:MsSqlConnectionString) {
@@ -804,7 +821,6 @@ function Open-MsSqlConnection {
             $connection.Open()
 
             $Global:MsSqlConnection       = $connection
-            $Global:MsSqlConnectionString = $connection_string
 
             $Global:ColumnsInfoCache = @{}
             $Global:SqlInfoCache = @{}
