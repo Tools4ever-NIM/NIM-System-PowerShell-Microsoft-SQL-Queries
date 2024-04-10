@@ -1,11 +1,4 @@
-# version: 1.0.1
-#
-# Microsoft SQL.ps1 - IDM System PowerShell Script for Microsoft SQL Server.
-#
-# Any IDM System PowerShell Script is dot-sourced in a separate PowerShell context, after
-# dot-sourcing the IDM Generic PowerShell Script '../Generic.ps1'.
-#
-
+# Microsoft SQL.ps1 - IDM System PowerShell Script for Microsoft SQL Server via Quereies.
 
 $Log_MaskableKeys = @(
     'password'
