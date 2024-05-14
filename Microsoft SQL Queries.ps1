@@ -72,7 +72,7 @@ function Idm-SystemInfo {
             @{
                 name = 'connection_timeout'
                 type = 'textbox'
-                label = 'Query Timeout'
+                label = 'Connection Timeout'
                 description = 'Time in seconds'
                 value = '3600'
             }
