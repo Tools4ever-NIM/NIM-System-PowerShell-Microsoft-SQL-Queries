@@ -27,7 +27,7 @@ function Idm-SystemInfo {
                 name = 'connection_header'
                 type = 'text'
                 text = 'Connection'
-				tooltip = 'Connection information for the database'
+                tooltip = 'Connection information for the database'
             }
             @{
                 name = 'server'
@@ -86,9 +86,9 @@ function Idm-SystemInfo {
                 name = 'session_header'
                 type = 'text'
                 text = 'Session Options'
-				tooltip = 'Options for system session'
+                tooltip = 'Options for system session'
             }
-			@{
+            @{
                 name = 'nr_of_sessions'
                 type = 'textbox'
                 label = 'Max. number of simultaneous sessions'
@@ -106,13 +106,13 @@ function Idm-SystemInfo {
                 name = 'table_header'
                 type = 'text'
                 text = 'Tables'
-				tooltip = 'Query to Table mapping'
+                tooltip = 'Query to Table mapping'
             }
-			@{
+            @{
                 name = 'table_1_header'
                 type = 'text'
                 text = 'Table 1'
-				tooltip = 'Table 1 Config'
+                tooltip = 'Table 1 Config'
             }
             @{
                 name = 'table_1_name'
@@ -125,485 +125,485 @@ function Idm-SystemInfo {
                 type = 'textbox'
                 label = 'Table 1 Query'
                 description = ''
-				disabled = '!table_1_name'
+                disabled = '!table_1_name'
                 hidden = '!table_1_name'
             }
-			
-			@{
-				name = 'table_2_header'
-				type = 'text'
-				text = 'Table 2'
-				tooltip = 'Table 2 Config'
-				disabled = '!table_1_name'
-				hidden = '!table_1_name'
-			}
-			@{
-				name = 'table_2_name'
-				type = 'textbox'
-				label = 'Table 2 Name'
-				description = ''
-				disabled = '!table_1_name'
-				hidden = '!table_1_name'
-			}
-			@{
-				name = 'table_2_query'
-				type = 'textbox'
-				label = 'Table 2 Query'
-				description = ''
-				disabled = '!table_1_name'
-				hidden = '!table_1_name'
-			}
+            
+            @{
+                name = 'table_2_header'
+                type = 'text'
+                text = 'Table 2'
+                tooltip = 'Table 2 Config'
+                disabled = '!table_1_name'
+                hidden = '!table_1_name'
+            }
+            @{
+                name = 'table_2_name'
+                type = 'textbox'
+                label = 'Table 2 Name'
+                description = ''
+                disabled = '!table_1_name'
+                hidden = '!table_1_name'
+            }
+            @{
+                name = 'table_2_query'
+                type = 'textbox'
+                label = 'Table 2 Query'
+                description = ''
+                disabled = '!table_1_name'
+                hidden = '!table_1_name'
+            }
 
-			@{
-				name = 'table_3_header'
-				type = 'text'
-				text = 'Table 3'
-				tooltip = 'Table 3 Config'
-				disabled = '!table_2_name'
-				hidden = '!table_2_name'
-			}
-			@{
-				name = 'table_3_name'
-				type = 'textbox'
-				label = 'Table 3 Name'
-				description = ''
-				disabled = '!table_2_name'
-				hidden = '!table_2_name'
-			}
-			@{
-				name = 'table_3_query'
-				type = 'textbox'
-				label = 'Table 3 Query'
-				description = ''
-				disabled = '!table_2_name'
-				hidden = '!table_2_name'
-			}
+            @{
+                name = 'table_3_header'
+                type = 'text'
+                text = 'Table 3'
+                tooltip = 'Table 3 Config'
+                disabled = '!table_2_name'
+                hidden = '!table_2_name'
+            }
+            @{
+                name = 'table_3_name'
+                type = 'textbox'
+                label = 'Table 3 Name'
+                description = ''
+                disabled = '!table_2_name'
+                hidden = '!table_2_name'
+            }
+            @{
+                name = 'table_3_query'
+                type = 'textbox'
+                label = 'Table 3 Query'
+                description = ''
+                disabled = '!table_2_name'
+                hidden = '!table_2_name'
+            }
 
-			@{
-				name = 'table_4_header'
-				type = 'text'
-				text = 'Table 4'
-				tooltip = 'Table 4 Config'
-				disabled = '!table_3_name'
-				hidden = '!table_3_name'
-			}
-			@{
-				name = 'table_4_name'
-				type = 'textbox'
-				label = 'Table 4 Name'
-				description = ''
-				disabled = '!table_3_name'
-				hidden = '!table_3_name'
-			}
-			@{
-				name = 'table_4_query'
-				type = 'textbox'
-				label = 'Table 4 Query'
-				description = ''
-				disabled = '!table_3_name'
-				hidden = '!table_3_name'
-			}
+            @{
+                name = 'table_4_header'
+                type = 'text'
+                text = 'Table 4'
+                tooltip = 'Table 4 Config'
+                disabled = '!table_3_name'
+                hidden = '!table_3_name'
+            }
+            @{
+                name = 'table_4_name'
+                type = 'textbox'
+                label = 'Table 4 Name'
+                description = ''
+                disabled = '!table_3_name'
+                hidden = '!table_3_name'
+            }
+            @{
+                name = 'table_4_query'
+                type = 'textbox'
+                label = 'Table 4 Query'
+                description = ''
+                disabled = '!table_3_name'
+                hidden = '!table_3_name'
+            }
 
-			@{
-				name = 'table_5_header'
-				type = 'text'
-				text = 'Table 5'
-				tooltip = 'Table 5 Config'
-				disabled = '!table_4_name'
-				hidden = '!table_4_name'
-			}
-			@{
-				name = 'table_5_name'
-				type = 'textbox'
-				label = 'Table 5 Name'
-				description = ''
-				disabled = '!table_4_name'
-				hidden = '!table_4_name'
-			}
-			@{
-				name = 'table_5_query'
-				type = 'textbox'
-				label = 'Table 5 Query'
-				description = ''
-				disabled = '!table_4_name'
-				hidden = '!table_4_name'
-			}
+            @{
+                name = 'table_5_header'
+                type = 'text'
+                text = 'Table 5'
+                tooltip = 'Table 5 Config'
+                disabled = '!table_4_name'
+                hidden = '!table_4_name'
+            }
+            @{
+                name = 'table_5_name'
+                type = 'textbox'
+                label = 'Table 5 Name'
+                description = ''
+                disabled = '!table_4_name'
+                hidden = '!table_4_name'
+            }
+            @{
+                name = 'table_5_query'
+                type = 'textbox'
+                label = 'Table 5 Query'
+                description = ''
+                disabled = '!table_4_name'
+                hidden = '!table_4_name'
+            }
 
-			@{
-				name = 'table_6_header'
-				type = 'text'
-				text = 'Table 6'
-				tooltip = 'Table 6 Config'
-				disabled = '!table_5_name'
-				hidden = '!table_5_name'
-			}
-			@{
-				name = 'table_6_name'
-				type = 'textbox'
-				label = 'Table 6 Name'
-				description = ''
-				disabled = '!table_5_name'
-				hidden = '!table_5_name'
-			}
-			@{
-				name = 'table_6_query'
-				type = 'textbox'
-				label = 'Table 6 Query'
-				description = ''
-				disabled = '!table_5_name'
-				hidden = '!table_5_name'
-			}
+            @{
+                name = 'table_6_header'
+                type = 'text'
+                text = 'Table 6'
+                tooltip = 'Table 6 Config'
+                disabled = '!table_5_name'
+                hidden = '!table_5_name'
+            }
+            @{
+                name = 'table_6_name'
+                type = 'textbox'
+                label = 'Table 6 Name'
+                description = ''
+                disabled = '!table_5_name'
+                hidden = '!table_5_name'
+            }
+            @{
+                name = 'table_6_query'
+                type = 'textbox'
+                label = 'Table 6 Query'
+                description = ''
+                disabled = '!table_5_name'
+                hidden = '!table_5_name'
+            }
 
-			@{
-				name = 'table_7_header'
-				type = 'text'
-				text = 'Table 7'
-				tooltip = 'Table 7 Config'
-				disabled = '!table_6_name'
-				hidden = '!table_6_name'
-			}
-			@{
-				name = 'table_7_name'
-				type = 'textbox'
-				label = 'Table 7 Name'
-				description = ''
-				disabled = '!table_6_name'
-				hidden = '!table_6_name'
-			}
-			@{
-				name = 'table_7_query'
-				type = 'textbox'
-				label = 'Table 7 Query'
-				description = ''
-				disabled = '!table_6_name'
-				hidden = '!table_6_name'
-			}
+            @{
+                name = 'table_7_header'
+                type = 'text'
+                text = 'Table 7'
+                tooltip = 'Table 7 Config'
+                disabled = '!table_6_name'
+                hidden = '!table_6_name'
+            }
+            @{
+                name = 'table_7_name'
+                type = 'textbox'
+                label = 'Table 7 Name'
+                description = ''
+                disabled = '!table_6_name'
+                hidden = '!table_6_name'
+            }
+            @{
+                name = 'table_7_query'
+                type = 'textbox'
+                label = 'Table 7 Query'
+                description = ''
+                disabled = '!table_6_name'
+                hidden = '!table_6_name'
+            }
 
-			@{
-				name = 'table_8_header'
-				type = 'text'
-				text = 'Table 8'
-				tooltip = 'Table 8 Config'
-				disabled = '!table_7_name'
-				hidden = '!table_7_name'
-			}
-			@{
-				name = 'table_8_name'
-				type = 'textbox'
-				label = 'Table 8 Name'
-				description = ''
-				disabled = '!table_7_name'
-				hidden = '!table_7_name'
-			}
-			@{
-				name = 'table_8_query'
-				type = 'textbox'
-				label = 'Table 8 Query'
-				description = ''
-				disabled = '!table_7_name'
-				hidden = '!table_7_name'
-			}
+            @{
+                name = 'table_8_header'
+                type = 'text'
+                text = 'Table 8'
+                tooltip = 'Table 8 Config'
+                disabled = '!table_7_name'
+                hidden = '!table_7_name'
+            }
+            @{
+                name = 'table_8_name'
+                type = 'textbox'
+                label = 'Table 8 Name'
+                description = ''
+                disabled = '!table_7_name'
+                hidden = '!table_7_name'
+            }
+            @{
+                name = 'table_8_query'
+                type = 'textbox'
+                label = 'Table 8 Query'
+                description = ''
+                disabled = '!table_7_name'
+                hidden = '!table_7_name'
+            }
 
-			@{
-				name = 'table_9_header'
-				type = 'text'
-				text = 'Table 9'
-				tooltip = 'Table 9 Config'
-				disabled = '!table_8_name'
-				hidden = '!table_8_name'
-			}
-			@{
-				name = 'table_9_name'
-				type = 'textbox'
-				label = 'Table 9 Name'
-				description = ''
-				disabled = '!table_8_name'
-				hidden = '!table_8_name'
-			}
-			@{
-				name = 'table_9_query'
-				type = 'textbox'
-				label = 'Table 9 Query'
-				description = ''
-				disabled = '!table_8_name'
-				hidden = '!table_8_name'
-			}
+            @{
+                name = 'table_9_header'
+                type = 'text'
+                text = 'Table 9'
+                tooltip = 'Table 9 Config'
+                disabled = '!table_8_name'
+                hidden = '!table_8_name'
+            }
+            @{
+                name = 'table_9_name'
+                type = 'textbox'
+                label = 'Table 9 Name'
+                description = ''
+                disabled = '!table_8_name'
+                hidden = '!table_8_name'
+            }
+            @{
+                name = 'table_9_query'
+                type = 'textbox'
+                label = 'Table 9 Query'
+                description = ''
+                disabled = '!table_8_name'
+                hidden = '!table_8_name'
+            }
 
-			@{
-				name = 'table_10_header'
-				type = 'text'
-				text = 'Table 10'
-				tooltip = 'Table 10 Config'
-				disabled = '!table_9_name'
-				hidden = '!table_9_name'
-			}
-			@{
-				name = 'table_10_name'
-				type = 'textbox'
-				label = 'Table 10 Name'
-				description = ''
-				disabled = '!table_9_name'
-				hidden = '!table_9_name'
-			}
-			@{
-				name = 'table_10_query'
-				type = 'textbox'
-				label = 'Table 10 Query'
-				description = ''
-				disabled = '!table_9_name'
-				hidden = '!table_9_name'
-			}
+            @{
+                name = 'table_10_header'
+                type = 'text'
+                text = 'Table 10'
+                tooltip = 'Table 10 Config'
+                disabled = '!table_9_name'
+                hidden = '!table_9_name'
+            }
+            @{
+                name = 'table_10_name'
+                type = 'textbox'
+                label = 'Table 10 Name'
+                description = ''
+                disabled = '!table_9_name'
+                hidden = '!table_9_name'
+            }
+            @{
+                name = 'table_10_query'
+                type = 'textbox'
+                label = 'Table 10 Query'
+                description = ''
+                disabled = '!table_9_name'
+                hidden = '!table_9_name'
+            }
 
-			@{
-				name = 'table_11_header'
-				type = 'text'
-				text = 'Table 11'
-				tooltip = 'Table 11 Config'
-				disabled = '!table_10_name'
-				hidden = '!table_10_name'
-			}
-			@{
-				name = 'table_11_name'
-				type = 'textbox'
-				label = 'Table 11 Name'
-				description = ''
-				disabled = '!table_10_name'
-				hidden = '!table_10_name'
-			}
-			@{
-				name = 'table_11_query'
-				type = 'textbox'
-				label = 'Table 11 Query'
-				description = ''
-				disabled = '!table_10_name'
-				hidden = '!table_10_name'
-			}
+            @{
+                name = 'table_11_header'
+                type = 'text'
+                text = 'Table 11'
+                tooltip = 'Table 11 Config'
+                disabled = '!table_10_name'
+                hidden = '!table_10_name'
+            }
+            @{
+                name = 'table_11_name'
+                type = 'textbox'
+                label = 'Table 11 Name'
+                description = ''
+                disabled = '!table_10_name'
+                hidden = '!table_10_name'
+            }
+            @{
+                name = 'table_11_query'
+                type = 'textbox'
+                label = 'Table 11 Query'
+                description = ''
+                disabled = '!table_10_name'
+                hidden = '!table_10_name'
+            }
 
-			@{
-				name = 'table_12_header'
-				type = 'text'
-				text = 'Table 12'
-				tooltip = 'Table 12 Config'
-				disabled = '!table_11_name'
-				hidden = '!table_11_name'
-			}
-			@{
-				name = 'table_12_name'
-				type = 'textbox'
-				label = 'Table 12 Name'
-				description = ''
-				disabled = '!table_11_name'
-				hidden = '!table_11_name'
-			}
-			@{
-				name = 'table_12_query'
-				type = 'textbox'
-				label = 'Table 12 Query'
-				description = ''
-				disabled = '!table_11_name'
-				hidden = '!table_11_name'
-			}
+            @{
+                name = 'table_12_header'
+                type = 'text'
+                text = 'Table 12'
+                tooltip = 'Table 12 Config'
+                disabled = '!table_11_name'
+                hidden = '!table_11_name'
+            }
+            @{
+                name = 'table_12_name'
+                type = 'textbox'
+                label = 'Table 12 Name'
+                description = ''
+                disabled = '!table_11_name'
+                hidden = '!table_11_name'
+            }
+            @{
+                name = 'table_12_query'
+                type = 'textbox'
+                label = 'Table 12 Query'
+                description = ''
+                disabled = '!table_11_name'
+                hidden = '!table_11_name'
+            }
 
-			@{
-				name = 'table_13_header'
-				type = 'text'
-				text = 'Table 13'
-				tooltip = 'Table 13 Config'
-				disabled = '!table_12_name'
-				hidden = '!table_12_name'
-			}
-			@{
-				name = 'table_13_name'
-				type = 'textbox'
-				label = 'Table 13 Name'
-				description = ''
-				disabled = '!table_12_name'
-				hidden = '!table_12_name'
-			}
-			@{
-				name = 'table_13_query'
-				type = 'textbox'
-				label = 'Table 13 Query'
-				description = ''
-				disabled = '!table_12_name'
-				hidden = '!table_12_name'
-			}
+            @{
+                name = 'table_13_header'
+                type = 'text'
+                text = 'Table 13'
+                tooltip = 'Table 13 Config'
+                disabled = '!table_12_name'
+                hidden = '!table_12_name'
+            }
+            @{
+                name = 'table_13_name'
+                type = 'textbox'
+                label = 'Table 13 Name'
+                description = ''
+                disabled = '!table_12_name'
+                hidden = '!table_12_name'
+            }
+            @{
+                name = 'table_13_query'
+                type = 'textbox'
+                label = 'Table 13 Query'
+                description = ''
+                disabled = '!table_12_name'
+                hidden = '!table_12_name'
+            }
 
-			@{
-				name = 'table_14_header'
-				type = 'text'
-				text = 'Table 14'
-				tooltip = 'Table 14 Config'
-				disabled = '!table_13_name'
-				hidden = '!table_13_name'
-			}
-			@{
-				name = 'table_14_name'
-				type = 'textbox'
-				label = 'Table 14 Name'
-				description = ''
-				disabled = '!table_13_name'
-				hidden = '!table_13_name'
-			}
-			@{
-				name = 'table_14_query'
-				type = 'textbox'
-				label = 'Table 14 Query'
-				description = ''
-				disabled = '!table_13_name'
-				hidden = '!table_13_name'
-			}
+            @{
+                name = 'table_14_header'
+                type = 'text'
+                text = 'Table 14'
+                tooltip = 'Table 14 Config'
+                disabled = '!table_13_name'
+                hidden = '!table_13_name'
+            }
+            @{
+                name = 'table_14_name'
+                type = 'textbox'
+                label = 'Table 14 Name'
+                description = ''
+                disabled = '!table_13_name'
+                hidden = '!table_13_name'
+            }
+            @{
+                name = 'table_14_query'
+                type = 'textbox'
+                label = 'Table 14 Query'
+                description = ''
+                disabled = '!table_13_name'
+                hidden = '!table_13_name'
+            }
 
-			@{
-				name = 'table_15_header'
-				type = 'text'
-				text = 'Table 15'
-				tooltip = 'Table 15 Config'
-				disabled = '!table_14_name'
-				hidden = '!table_14_name'
-			}
-			@{
-				name = 'table_15_name'
-				type = 'textbox'
-				label = 'Table 15 Name'
-				description = ''
-				disabled = '!table_14_name'
-				hidden = '!table_14_name'
-			}
-			@{
-				name = 'table_15_query'
-				type = 'textbox'
-				label = 'Table 15 Query'
-				description = ''
-				disabled = '!table_14_name'
-				hidden = '!table_14_name'
-			}
+            @{
+                name = 'table_15_header'
+                type = 'text'
+                text = 'Table 15'
+                tooltip = 'Table 15 Config'
+                disabled = '!table_14_name'
+                hidden = '!table_14_name'
+            }
+            @{
+                name = 'table_15_name'
+                type = 'textbox'
+                label = 'Table 15 Name'
+                description = ''
+                disabled = '!table_14_name'
+                hidden = '!table_14_name'
+            }
+            @{
+                name = 'table_15_query'
+                type = 'textbox'
+                label = 'Table 15 Query'
+                description = ''
+                disabled = '!table_14_name'
+                hidden = '!table_14_name'
+            }
 
-			@{
-				name = 'table_16_header'
-				type = 'text'
-				text = 'Table 16'
-				tooltip = 'Table 16 Config'
-				disabled = '!table_15_name'
-				hidden = '!table_15_name'
-			}
-			@{
-				name = 'table_16_name'
-				type = 'textbox'
-				label = 'Table 16 Name'
-				description = ''
-				disabled = '!table_15_name'
-				hidden = '!table_15_name'
-			}
-			@{
-				name = 'table_16_query'
-				type = 'textbox'
-				label = 'Table 16 Query'
-				description = ''
-				disabled = '!table_15_name'
-				hidden = '!table_15_name'
-			}
+            @{
+                name = 'table_16_header'
+                type = 'text'
+                text = 'Table 16'
+                tooltip = 'Table 16 Config'
+                disabled = '!table_15_name'
+                hidden = '!table_15_name'
+            }
+            @{
+                name = 'table_16_name'
+                type = 'textbox'
+                label = 'Table 16 Name'
+                description = ''
+                disabled = '!table_15_name'
+                hidden = '!table_15_name'
+            }
+            @{
+                name = 'table_16_query'
+                type = 'textbox'
+                label = 'Table 16 Query'
+                description = ''
+                disabled = '!table_15_name'
+                hidden = '!table_15_name'
+            }
 
-			@{
-				name = 'table_17_header'
-				type = 'text'
-				text = 'Table 17'
-				tooltip = 'Table 17 Config'
-				disabled = '!table_16_name'
-				hidden = '!table_16_name'
-			}
-			@{
-				name = 'table_17_name'
-				type = 'textbox'
-				label = 'Table 17 Name'
-				description = ''
-				disabled = '!table_16_name'
-				hidden = '!table_16_name'
-				
-			}
-			@{
-				name = 'table_17_query'
-				type = 'textbox'
-				label = 'Table 17 Query'
-				description = ''
-				disabled = '!table_16_name'
-				hidden = '!table_16_name'
-			}
+            @{
+                name = 'table_17_header'
+                type = 'text'
+                text = 'Table 17'
+                tooltip = 'Table 17 Config'
+                disabled = '!table_16_name'
+                hidden = '!table_16_name'
+            }
+            @{
+                name = 'table_17_name'
+                type = 'textbox'
+                label = 'Table 17 Name'
+                description = ''
+                disabled = '!table_16_name'
+                hidden = '!table_16_name'
+                
+            }
+            @{
+                name = 'table_17_query'
+                type = 'textbox'
+                label = 'Table 17 Query'
+                description = ''
+                disabled = '!table_16_name'
+                hidden = '!table_16_name'
+            }
 
-			@{
-				name = 'table_18_header'
-				type = 'text'
-				text = 'Table 18'
-				tooltip = 'Table 18 Config'
-				disabled = '!table_17_name'
-				hidden = '!table_17_name'
-			}
-			@{
-				name = 'table_18_name'
-				type = 'textbox'
-				label = 'Table 18 Name'
-				description = ''
-				disabled = '!table_17_name'
-				hidden = '!table_17_name'
-			}
-			@{
-				name = 'table_18_query'
-				type = 'textbox'
-				label = 'Table 18 Query'
-				description = ''
-				disabled = '!table_17_name'
-				hidden = '!table_17_name'
-			}
+            @{
+                name = 'table_18_header'
+                type = 'text'
+                text = 'Table 18'
+                tooltip = 'Table 18 Config'
+                disabled = '!table_17_name'
+                hidden = '!table_17_name'
+            }
+            @{
+                name = 'table_18_name'
+                type = 'textbox'
+                label = 'Table 18 Name'
+                description = ''
+                disabled = '!table_17_name'
+                hidden = '!table_17_name'
+            }
+            @{
+                name = 'table_18_query'
+                type = 'textbox'
+                label = 'Table 18 Query'
+                description = ''
+                disabled = '!table_17_name'
+                hidden = '!table_17_name'
+            }
 
-			@{
-				name = 'table_19_header'
-				type = 'text'
-				text = 'Table 19'
-				tooltip = 'Table 19 Config'
-				disabled = '!table_18_name'
-				hidden = '!table_18_name'
-			}
-			@{
-				name = 'table_19_name'
-				type = 'textbox'
-				label = 'Table 19 Name'
-				description = ''
-				disabled = '!table_18_name'
-				hidden = '!table_18_name'
-			}
-			@{
-				name = 'table_19_query'
-				type = 'textbox'
-				label = 'Table 19 Query'
-				description = ''
-				disabled = '!table_18_name'
-				hidden = '!table_18_name'
-			}
+            @{
+                name = 'table_19_header'
+                type = 'text'
+                text = 'Table 19'
+                tooltip = 'Table 19 Config'
+                disabled = '!table_18_name'
+                hidden = '!table_18_name'
+            }
+            @{
+                name = 'table_19_name'
+                type = 'textbox'
+                label = 'Table 19 Name'
+                description = ''
+                disabled = '!table_18_name'
+                hidden = '!table_18_name'
+            }
+            @{
+                name = 'table_19_query'
+                type = 'textbox'
+                label = 'Table 19 Query'
+                description = ''
+                disabled = '!table_18_name'
+                hidden = '!table_18_name'
+            }
 
-			@{
-				name = 'table_20_header'
-				type = 'text'
-				text = 'Table 20'
-				tooltip = 'Table 20 Config'
-				disabled = '!table_19_name'
-				hidden = '!table_19_name'
-			}
-			@{
-				name = 'table_20_name'
-				type = 'textbox'
-				label = 'Table 20 Name'
-				description = ''
-				disabled = '!table_19_name'
-				hidden = '!table_19_name'
-			}
-			@{
-				name = 'table_20_query'
-				type = 'textbox'
-				label = 'Table 20 Query'
-				description = ''
-				disabled = '!table_19_name'
-				hidden = '!table_19_name'
-			}
+            @{
+                name = 'table_20_header'
+                type = 'text'
+                text = 'Table 20'
+                tooltip = 'Table 20 Config'
+                disabled = '!table_19_name'
+                hidden = '!table_19_name'
+            }
+            @{
+                name = 'table_20_name'
+                type = 'textbox'
+                label = 'Table 20 Name'
+                description = ''
+                disabled = '!table_19_name'
+                hidden = '!table_19_name'
+            }
+            @{
+                name = 'table_20_query'
+                type = 'textbox'
+                label = 'Table 20 Query'
+                description = ''
+                disabled = '!table_19_name'
+                hidden = '!table_19_name'
+            }
 
         )
     }
@@ -755,6 +755,7 @@ function Idm-Dispatcher {
             switch ($Operation) {
                 'Read' {
                     $sql_command.CommandText = $class_query
+                    $sql_command.CommandTimeout = $connection_params.timeout
                     break
                 }
             }
