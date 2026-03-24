@@ -648,15 +648,13 @@ function Fill-SqlInfoCache {
     Dispose-MsSqlCommand $sql_command
 
     $objects = New-Object System.Collections.ArrayList
-    $object = @{}
-    # Process in one pass
-    foreach ($row in $result) {
-            $object = @{
-                full_name = $Class
-                type      = 'Query'
-                columns   = New-Object System.Collections.ArrayList
-            }
+    $object = @{
+        full_name = $Class
+        type      = 'Query'
+        columns   = New-Object System.Collections.ArrayList
+    }
 
+    foreach ($row in $result) {
         $object.columns.Add(@{
             name           = $row.Name
             is_primary_key = $false
@@ -700,7 +698,7 @@ function Idm-Dispatcher {
             #
             # Output list of supported operations per table/view (named Class)
             #
-            for (($i = 0), ($j = 0); $i -lt 21; $i++)
+            for ($i = 0; $i -lt 21; $i++)
             {
                 if($connection_params."table_$($i)_name".length -gt 0)
                 {
@@ -741,7 +739,7 @@ function Idm-Dispatcher {
 
             Open-MsSqlConnection $SystemParams
 
-            for (($i = 0), ($j = 0); $i -lt 21; $i++)
+            for ($i = 0; $i -lt 21; $i++)
             {
                 if($connection_params."table_$($i)_name" -eq $class)
                 {
@@ -876,8 +874,6 @@ function Invoke-MsSqlCommand {
         [string] $DeParamCommand
     )
 
-    # Streaming
-    # ERAM dbo.Files (426.977 rows) execution time: ?
     function Invoke-MsSqlCommand-ExecuteReader {
         param (
             [System.Data.SqlClient.SqlCommand] $SqlCommand
@@ -894,11 +890,9 @@ function Invoke-MsSqlCommand {
                 $hash_table[$column_name] = ""
             }
 
-#           $obj = [PSCustomObject]$hash_table
-            $obj = New-Object -TypeName PSObject -Property $hash_table
-
             # Read data
             if($data_reader.HasRows) {
+                $obj = [PSCustomObject]$hash_table
                 while ($data_reader.Read()) {
                     foreach ($column_name in $column_names) {
                         $obj.$column_name = if ($data_reader[$column_name] -is [System.DBNull]) { $null } else { $data_reader[$column_name] }
@@ -911,102 +905,6 @@ function Invoke-MsSqlCommand {
         }
 
         $data_reader.Close()
-    }
-
-    # Streaming
-    # ERAM dbo.Files (426.977 rows) execution time: 16.7 s
-    function Invoke-MsSqlCommand-ExecuteReader00 {
-        param (
-            [System.Data.SqlClient.SqlCommand] $SqlCommand
-        )
-
-        $data_reader = $SqlCommand.ExecuteReader()
-        $column_names = @($data_reader.GetSchemaTable().ColumnName)
-
-        if ($column_names) {
-
-            # Initialize result
-            $hash_table = [ordered]@{}
-
-            for ($i = 0; $i -lt $column_names.Count; $i++) {
-                $hash_table[$column_names[$i]] = ''
-            }
-
-            $result = New-Object -TypeName PSObject -Property $hash_table
-
-            # Read data
-            while ($data_reader.Read()) {
-                foreach ($column_name in $column_names) {
-                    $result.$column_name = $data_reader[$column_name]
-                }
-
-                # Output data
-                $result
-            }
-
-        }
-
-        $data_reader.Close()
-    }
-
-    # Streaming
-    # ERAM dbo.Files (426.977 rows) execution time: 01:11.9 s
-    function Invoke-MsSqlCommand-ExecuteReader01 {
-        param (
-            [System.Data.SqlClient.SqlCommand] $SqlCommand
-        )
-
-        $data_reader = $SqlCommand.ExecuteReader()
-        $field_count = $data_reader.FieldCount
-
-        while ($data_reader.Read()) {
-            $hash_table = [ordered]@{}
-        
-            for ($i = 0; $i -lt $field_count; $i++) {
-                $hash_table[$data_reader.GetName($i)] = $data_reader.GetValue($i)
-            }
-
-            # Output data
-            New-Object -TypeName PSObject -Property $hash_table
-        }
-
-        $data_reader.Close()
-    }
-
-    # Non-streaming (data stored in $data_table)
-    # ERAM dbo.Files (426.977 rows) execution time: 15.5 s
-    function Invoke-MsSqlCommand-DataAdapter-DataTable {
-        param (
-            [System.Data.SqlClient.SqlCommand] $SqlCommand
-        )
-
-        $data_adapter = New-Object System.Data.SqlClient.SqlDataAdapter($SqlCommand)
-        $data_table   = New-Object System.Data.DataTable
-        $data_adapter.Fill($data_table) | Out-Null
-
-        # Output data
-        $data_table.Rows
-
-        $data_table.Dispose()
-        $data_adapter.Dispose()
-    }
-
-    # Non-streaming (data stored in $data_set)
-    # ERAM dbo.Files (426.977 rows) execution time: 14.8 s
-    function Invoke-MsSqlCommand-DataAdapter-DataSet {
-        param (
-            [System.Data.SqlClient.SqlCommand] $SqlCommand
-        )
-
-        $data_adapter = New-Object System.Data.SqlClient.SqlDataAdapter($SqlCommand)
-        $data_set     = New-Object System.Data.DataSet
-        $data_adapter.Fill($data_set) | Out-Null
-
-        # Output data
-        $data_set.Tables[0]
-
-        $data_set.Dispose()
-        $data_adapter.Dispose()
     }
 
     if (! $DeParamCommand) {
@@ -1072,6 +970,7 @@ function Open-MsSqlConnection {
             $connection.Open()
 
             $Global:MsSqlConnection       = $connection
+            $Global:MsSqlConnectionString = $connection_string
 
             $Global:ColumnsInfoCache = @{}
             $Global:SqlInfoCache = @{}
